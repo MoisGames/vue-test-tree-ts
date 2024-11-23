@@ -1,39 +1,19 @@
 # vue-test-tree-ts
+Небольшое Frontend приложение написанное на Vue 3 Composition API используя TypeScript.
+Которое демонстрирует работу по показу и скрытию папок, а также передача идентификатора в Parent Component.
+## Описание
+При запуске приложения открывается MainPage.vue в котором одна кнопка “Открыть”. При ее нажатии открывается модальное окно (ModalWindow.vue) кнопка “Открыть” становится кнопкой закрыть, и закрывает модальное окно без других действий. 
+При выборе и нажатии на папку она выделяется визуально, и если нажать кнопку `OK` тогда модальное окно закрывается, и в родительский компонент передается идентификатор папки, который показывается только если он выбран вообще и модальное окно закрыто."
 
-This template should help get you started developing with Vue 3 in Vite.
+## Remote / Install
+Чтобы создать клон репозитория в командной строке:
 
-## Recommended IDE Setup
+git clone https://github.com/MoisGames/vue-test-tree-ts.git
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
+Чтобы запустить приложение: В терминале введите 
 ```sh
 npm run dev
 ```
+Нажмите Enter
 
-### Type-Check, Compile and Minify for Production
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
