@@ -1,11 +1,24 @@
 <script setup lang="ts">
-import ModalWindow from './ModalWindow.vue';
+import { ref } from 'vue'
+import ModalWindow from './ModalWindow.vue'
+
+const isShow = ref(false)
+
+function toggleModal() {
+  if (!isShow.value) {
+    isShow.value = true
+  } else {
+    isShow.value = false
+  }
+}
 </script>
 
 <template>
   <main class="main-page__wrapper">
-    <ModalWindow />
-    <v-button>Открыть</v-button>
+    <div class="main-page__modal-window">
+      <ModalWindow title="Дерево папок" v-if="isShow" />
+    </div>
+    <v-button @click="toggleModal">{{ isShow ? 'Закрыть' : 'Открыть' }}</v-button>
   </main>
 </template>
 <style scoped>
@@ -17,6 +30,14 @@ import ModalWindow from './ModalWindow.vue';
   width: 100%;
   height: 90vh;
   gap: 20px;
+}
+.main-page__modal-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60%;
 }
 v-button {
   border: 2px solid black;
